@@ -1,0 +1,9 @@
+*
+!link/
+!link/*
+!nvim/
+!nvim/*
+!nvim/lua/*
+!nvim/lua/plugins/*
+!nvim/lua/config/*
+!.gitignore
