@@ -48,6 +48,6 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
   "n",
   "<leader>cv",
-  ':!verilator "%:p" --exe testbench.cpp -cc && make -C obj_dir -j -f V%:t:r.mk V%:t:r && gnome-terminal -- bash -c "./obj_dir/V%:t:r; exec bash"<CR>',
+  ':!verilator "%:p" --exe testbench.cpp --cc --build --trace && gnome-terminal -- bash -c "./obj_dir/V%:t:r; exec bash"<CR>',
   { noremap = true, silent = true, desc = "Compile and run verilog file" }
 )

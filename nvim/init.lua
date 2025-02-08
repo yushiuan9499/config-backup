@@ -8,4 +8,5 @@ vim.opt.cursorline = true
 vim.cmd("highlight CursorLine guibg=#484891")
 vim.cmd("highlight CursorLineNr guifg=#9AFF02")
 vim.cmd("set tabstop=4")
-vim.cmd("set shiftwidth=4")
+vim.cmd("set shiftwidth=2")
+vim.cmd("let g:ftplugin_sql_omni_key = '<C-x><C-o>'")
