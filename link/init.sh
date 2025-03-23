@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 # This is the script to install zsh, oh-my-zsh, and some other plugins
 # Author: yushiuan9499 date: 2025-03-23
 sudo apt update
