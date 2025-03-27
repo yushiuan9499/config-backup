@@ -51,3 +51,35 @@ vim.api.nvim_set_keymap(
   ':!verilator "%:p" --exe testbench.cpp --cc --build --trace && gnome-terminal -- bash -c "./obj_dir/V%:t:r; exec bash"<CR>',
   { noremap = true, silent = true, desc = "Compile and run verilog file" }
 )
+
+-- 用來搜尋選取的文字
+function _G.searchSelection()
+  -- 取得選取的文字的範圍
+  local _, lineS, colS = unpack(vim.fn.getpos("'<"))
+  local _, lineE, colE = unpack(vim.fn.getpos("'>"))
+  local lines = vim.fn.getline(lineS, lineE)
+
+  -- 如果只有一行的話，就只取選取的範圍
+  if #lines == 1 then
+    lines[1] = string.sub(lines[1], colS, colE)
+  else
+    -- 如果有多行的話，就取選取的範圍，並且把第一行和最後一行的文字做修正
+    lines[#lines] = string.sub(lines[#lines], 1, colE)
+    lines[1] = string.sub(lines[1], colS)
+  end
+  local query = table.concat(lines, " "):gsub(" ", "+"):gsub("\n", "") -- 把空白換成加號，並且把換行符號去掉
+  query = query:gsub('"', '\\"') -- 把雙引號換成跳脫字元
+  if query:sub(1, 8) == "https://" or query:sub(1, 7) == "http://" then
+    -- 如果是網址的話，就直接開啟網址
+    vim.fn.system('firefox --new-tab "' .. query .. '"')
+  else
+    -- 如果不是網址的話，就用 google 搜尋
+    vim.fn.system('firefox --new-tab "https://www.google.com/search?q=' .. query .. '"')
+  end
+end
+vim.api.nvim_set_keymap(
+  "v",
+  "<leader><CR>",
+  ":lua searchSelection()<CR>",
+  { noremap = true, silent = true, desc = "Search for selected text in browser" }
+)
