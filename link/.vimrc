@@ -53,5 +53,5 @@ function! CleverTab()
                 return "<C-N>"
         endif
 endfunction
-inoremap <Tab> <C-R>=CleverTab()<CR>
+" inoremap <Tab> <C-R>=CleverTab()<CR>
 
