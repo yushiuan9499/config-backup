@@ -6,11 +6,16 @@
 :set incsearch
 :set hlsearch
 :set encoding=utf-8
+" 補全括號等左右批配的字
 :inoremap ( ()<ESC>i
 :inoremap [ []<ESC>i
 :inoremap " ""<ESC>i
 :inoremap ' ''<ESC>i
 :inoremap {<CR> {<CR>}<ESC>ko
+" 將字複製到clipboard
+" <Leader> 是 \
+:noremap <Leader>y "+y
+:noremap <Leader>p "+p
 filetype indent on
 :hi LineNr cterm=bold ctermfg=DarkGrey ctermbg=NONE
 :hi CursorLineNr cterm=bold ctermfg=Green ctermbg=NONE
@@ -48,10 +53,9 @@ set statusline+=%{get(g:currentmode,mode(),mode())}   " The current mode
 set statusline+=%1*\ %<%F%m%r%h%w         " File path, modified, readonly, helpfile, preview
 function! CleverTab()
         if strpart( getline('.'), 0, col('.')-1 ) =~ '^s*$'
-                return "<Tab>"
+                return "\<Tab>"
         else
-                return "<C-N>"
+                return "\<C-N>"
         endif
 endfunction
-" inoremap <Tab> <C-R>=CleverTab()<CR>
-
+inoremap <Tab> <C-R>=CleverTab()<CR>
