@@ -116,4 +116,7 @@ export NVM_DIR="$HOME/.nvm"
 autoload -U compinit && compinit -u
 
 eval $(thefuck --alias)
-alias bat="batcat"
+# alias bat="batcat"
+
+alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'

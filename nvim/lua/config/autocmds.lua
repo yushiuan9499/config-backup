@@ -55,6 +55,6 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "*.vh",
   callback = function()
-    vim.api.nvim_command("set syntax=verilog")
+    vim.api.nvim_command("setlocal filetype=verilog") -- Set the filetype to verilog
   end,
 })

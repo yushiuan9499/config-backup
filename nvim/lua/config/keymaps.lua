@@ -23,6 +23,7 @@ vim.api.nvim_set_keymap(
   ':!gnome-terminal -- bash -c "python3 \\"%:p\\"; exec bash"<CR>',
   { noremap = true, silent = true, desc = "Run Python file" }
 )
+-- 定义运行 SQLite 的逻辑
 function _G.run_sqlite()
   local settings = read_json_file(vim.fn.getcwd() .. "/sql_setting.json")
   if settings then
@@ -43,7 +44,6 @@ vim.api.nvim_set_keymap(
   ":lua run_sqlite()<CR>",
   { noremap = true, silent = true, desc = "Run sqlite3 file" }
 )
--- 定义运行 SQLite 的逻辑
 -- 編譯verilog 並執行
 vim.api.nvim_set_keymap(
   "n",
