@@ -7,3 +7,4 @@
 !nvim/lua/plugins/*
 !nvim/lua/config/*
 !.gitignore
+!README.md
