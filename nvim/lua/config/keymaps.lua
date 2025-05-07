@@ -90,6 +90,12 @@ vim.api.nvim_set_keymap(
   ':lua vim.ui.input({ prompt = "Enter content to save: " }, function(input) if input and input ~= "" then vim.cmd("CopilotChatSave " .. vim.fn.escape(input, " ")) else vim.notify("Input cannot be empty", vim.log.levels.ERROR) end end)<CR>',
   { noremap = true, silent = true, desc = "Save Copilot Chat content" }
 )
+vim.api.nvim_set_keymap(
+  "n",
+  "<C-o>",
+  ":CopilotChatLoad ",
+  { noremap = true, silent = true, desc = "Load Copilot Chat content" }
+)
 -- CopilotChatOpen short cut
 vim.api.nvim_set_keymap(
   "n",
