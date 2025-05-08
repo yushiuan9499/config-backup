@@ -11,9 +11,6 @@ return {
         "<f5>",
         function()
             local dap = require("dap")
-            if vim.fn.expand("%:e") == "cpp" and dap.session() == nil then
-                vim.cmd("!g++ -g % -o %<")
-            end
             dap.continue()
         end,
         desc = "launch/continue gdb",
