@@ -10,5 +10,5 @@ vim.cmd("highlight CursorLineNr guifg=#9AFF02")
 vim.cmd("set tabstop=4")
 vim.cmd("set shiftwidth=2")
 vim.cmd("let g:ftplugin_sql_omni_key = '<C-x><C-o>'")
---- 為了讓CopilotChat.nvim能在nvim 0.10.0工作
-vim.opt.completeopt:append({ "noinsert", "popup" })
+--- 為了讓CopilotChat.nvim能在nvim 0.11.1工作
+vim.opt.completeopt:append({ "popup" })
