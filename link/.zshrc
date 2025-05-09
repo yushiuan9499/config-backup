@@ -105,7 +105,7 @@ fi
 # To change the color of autosuggestion 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#6a7a8a'
 # The path env var of nvim
-export PATH="$PATH:/opt/nvim-linux64/bin:/opt/ida-free-pc-9.0:$HOME/scripts"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin:/opt/ida-free-pc-9.0:$HOME/scripts"
 
 # The path env of npm
 export NVM_DIR="$HOME/.nvm"
@@ -115,7 +115,6 @@ export NVM_DIR="$HOME/.nvm"
 
 autoload -U compinit && compinit -u
 
-eval $(thefuck --alias)
 
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 alias fd=fdfind
