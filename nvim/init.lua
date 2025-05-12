@@ -1,6 +1,5 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
-
 -- 啟用游標行
 vim.opt.cursorline = true
 

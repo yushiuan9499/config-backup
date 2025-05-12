@@ -6,5 +6,6 @@
 !nvim/lua/*
 !nvim/lua/plugins/*
 !nvim/lua/config/*
+!nvim/lua/snippets/*
 !.gitignore
 !README.md

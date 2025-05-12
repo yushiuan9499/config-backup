@@ -120,3 +120,5 @@ alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 alias fd=fdfind
 export DFT_DISPLAY=side-by-side-show-both
 eval "$(gh copilot alias -- zsh)"
+
+. "$HOME/.local/bin/env"
