@@ -32,7 +32,7 @@ return {
       t("();"),
       t({ "", "};" }),
     }),
-    s("main", {
+    s({ trig = "main", dscr = "basic main function" }, {
       t("int main(int argc, char** argv) {"),
       t({ "", "  " }),
       i(0),
