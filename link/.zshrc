@@ -121,4 +121,5 @@ alias fd=fdfind
 export DFT_DISPLAY=side-by-side-show-both
 eval "$(gh copilot alias -- zsh)"
 
+# sudo vmhgfs-fuse .host:/ /mnt/ -o allow_other -o uid=1000
 . "$HOME/.local/bin/env"
